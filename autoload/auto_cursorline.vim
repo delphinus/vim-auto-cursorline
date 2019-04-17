@@ -1,3 +1,11 @@
+" When CursorMoved,CursorMovedI occurs, it substitutes s:cursor into s:status.
+" And when WinEnter, it substitutes s:window into s:status.
+"
+" NOTE: When you enter in a new window, WinEnter AND CursorMoved events occur
+" some time. So cursor_moved() does nothing when s:status == s:window, that
+" is, win_enter() has been called. When you move the cursor after that, it
+" sets 'nocursorline' at the first time.
+
 let s:disabled = 0
 let s:cursor = 1
 let s:window = 2
