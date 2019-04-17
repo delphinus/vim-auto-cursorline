@@ -6,24 +6,24 @@ Show / hide cursorline in connection with cursor moving.
 
 ## What's this?
 
-This plugin manages the `'cursorline'` option to show / hide it according to
-necessity. It shows / hides cursorline in these cases below.
+This plugin manages the `'cursorline'` option to show only when you need. It
+shows / hides in these cases below.
 
 ### show
 
 * opening buffers
-* moving into the window
+* moving into another window
 * holding the cursor in a certain wait (customizable)
 
 ### hide
 
-* moving the cursor inside the window
+* moving the cursor
 
 ## Why is this plugin needed?
 
-The cursorline option takes a bit heavy CPU usage. It slows the cursor moving
-vertically. In addition, you need cursorline only when you are missing the
-cursor.  Hiding cursorline should make it easy to read characters on the line.
+The cursorline option takes heavy CPU usage and makes the cursor move slowly.
+In addition, you should need cursorline only when you are missing the cursor.
+Hiding cursorline should make it easy to read characters on the line.
 
 ##  Install
 
