@@ -1,5 +1,7 @@
 # vim-auto-cursorline
 
+![demo](https://user-images.githubusercontent.com/1239245/56263753-2d18ef00-611f-11e9-8a1f-97418429b414.gif)
+
 Show / hide cursorline in connection with cursor moving.
 
 ## What's this?
