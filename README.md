@@ -21,6 +21,10 @@ shows / hides in these cases below.
 
 ## Why is this plugin needed?
 
+_details in [this entry][qiita] (in Japanese)._
+
+[qiita]: https://qiita.com/delphinus/items/a05f6f21dd494bad9f25
+
 The cursorline option takes heavy CPU usage and makes the cursor move slowly.
 In addition, you should need cursorline only when you are missing the cursor.
 Hiding cursorline should make it easy to read characters on the line.
