@@ -45,6 +45,18 @@ Or, use your favorite plugin managers.
 
 It waits this value milliseconds before hiding cursorline. Default: 1000.
 
+### `b:auto_cursorline_disabled`
+
+When this value is set to `1`, it disables all features. This is a
+buffer-specific value, so you may set this with autocmd.
+
+```vim
+" this disables all features in JSON filetype.
+autocmd FileType json :let b:auto_cursorline_disabled = 1
+```
+
+In addition to this, all features are already disabled in terminal windows.
+
 ## Background
 
 The idea of this plugin is derived from [this entry][] (in Japanese). One of

@@ -13,6 +13,9 @@ let s:status = s:disabled
 let s:timer_id = 0
 
 function! auto_cursorline#cursor_moved() abort
+  if auto_cursorline#is_disabled()
+    return
+  endif
   if s:status == s:window
     let s:status = s:cursor
     return
@@ -26,12 +29,18 @@ function! auto_cursorline#cursor_moved() abort
 endfunction
 
 function! auto_cursorline#win_enter() abort
+  if auto_cursorline#is_disabled()
+    return
+  endif
   setlocal cursorline
   let s:status = s:window
   call auto_cursorline#timer_stop()
 endfunction
 
 function! auto_cursorline#win_leave() abort
+  if auto_cursorline#is_disabled()
+    return
+  endif
   setlocal nocursorline
   call auto_cursorline#timer_stop()
 endfunction
@@ -51,4 +60,8 @@ function! auto_cursorline#enable(timer_id) abort
   setlocal cursorline
   let s:status = s:cursor
   let s:timer_id = 0
+endfunction
+
+function! auto_cursorline#is_disabled() abort
+  return &buftype ==# 'terminal' || get(b:, 'auto_cursorline_disabled', 0)
 endfunction
