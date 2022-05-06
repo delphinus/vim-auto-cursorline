@@ -6,65 +6,17 @@ Show / hide cursorline in connection with cursor moving.
 
 ## What's this?
 
-This plugin manages the `'cursorline'` option to show only when you need. It
-shows / hides in these cases below.
+This plugin manages the `'cursorline'` option to show only when you need.
 
-### show
+NOTE: For Neovim (>=0.7.0) users, you may use a Lua version of this instead.
+See [delphinus/auto-cursorline.nvim][].
 
-* opening buffers
-* moving into another window
-* holding the cursor in a certain wait (customizable)
-
-### hide
-
-* moving the cursor
-
-## Why is this plugin needed?
-
-_details in [this entry][qiita] (in Japanese)._
-
-[qiita]: https://qiita.com/delphinus/items/a05f6f21dd494bad9f25
-
-The cursorline option takes heavy CPU usage and makes the cursor move slowly.
-In addition, you should need cursorline only when you are missing the cursor.
-Hiding cursorline should make it easy to read characters on the line.
+[delphinus/auto-cursorline.nvim]: https://github.com/delphinus/auto-cursorline.nvim
 
 ##  Install
 
-Clone this repository and add the dir to `'runtimepath'`.
+Clone the repository to your `'packpath'` …… that's all!
 
-```vim
-set runtimepath+=/path/to/this/repo
-```
+For usage and other settings, see the [doc][].
 
-Or, use your favorite plugin managers.
-
-## Setting
-
-### `g:auto_cursorline_wait_ms`
-
-It waits this value milliseconds before hiding cursorline. Default: 1000.
-
-### `b:auto_cursorline_disabled`
-
-When this value is set to `1`, it disables all features. This is a
-buffer-specific value, so you may set this with autocmd.
-
-```vim
-" this disables all features in JSON filetype.
-autocmd FileType json :let b:auto_cursorline_disabled = 1
-```
-
-In addition to this, all features are already disabled in terminal windows.
-
-## Background
-
-The idea of this plugin is derived from [this entry][] (in Japanese). One of
-the reason why I did “reinventing the wheel” is because the original one uses
-the `'updatetime'` option to wait before hiding cursorline. But other plugins,
-such as [vim-gitgutter][], uses `'updatetime'` for different usages. I made
-this plugin for setting the designated value for the time before hiding the
-cursorline.
-
-[this entry]: https://thinca.hatenablog.com/entry/20090530/1243615055
-[vim-gitgutter]: https://github.com/airblade/vim-gitgutter
+[doc]: doc/auto_cursorline.txt
